@@ -71,23 +71,23 @@ def login():
 # login()
 
 # Latihan 3 selisih waktu
+def hitung_inputan_detik_waktu():
+    jam = int(input("Masukkan Jam: "))
+    menit = int(input("Masukkan Menit: "))
+    detik = int(input("Masukkan Detik: "))
+
+    total = (jam * 3600) + (menit * 60) + detik
+    return  total
 
 def hitung_selisih_waktu():
+
     print("--- Input Waktu Mulai ---")
-    jam_mulai = int(input("Jam   : "))
-    menit_mulai = int(input("Menit : "))
-    detik_mulai = int(input("Detik : "))
+    total_mulai = hitung_inputan_detik_waktu()
 
     print("\n--- Input Waktu Selesai ---")
-    jam_selesai = int(input("Jam   : "))
-    menit_selesai = int(input("Menit : "))
-    detik_selesai = int(input("Detik : "))
+    total_selesai = hitung_inputan_detik_waktu()
 
-    total_detik_mulai = (jam_mulai * 3600) + (menit_mulai * 60) + detik_mulai
-    total_detik_selesai = (jam_selesai * 3600) + (menit_selesai * 60) + detik_selesai
-
-
-    selisih_detik = total_detik_selesai - total_detik_mulai
+    selisih_detik = total_selesai - total_mulai
 
     if selisih_detik < 0:
         selisih_detik += 24 * 3600
@@ -101,4 +101,4 @@ def hitung_selisih_waktu():
     print(f"Output: {jam} jam - {menit} menit - {detik} detik")
 
 # Jalankan fungsi
-# hitung_selisih_waktu()
+hitung_selisih_waktu()
