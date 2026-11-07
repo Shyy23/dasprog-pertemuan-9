@@ -25,24 +25,32 @@ def volume_tabung(r, t):
 
 
 # Latihan 1 no 3 Total dan Rata-Rata
-list_angka = []
+
+pembatas = "="*20
+list_nilai = []
 
 def hitung_total_dan_rata(*angka):
     total = sum(angka)
     rata_rata = total / len(angka) if len(angka) > 0 else 0 
     return total, rata_rata
 
-# # Input User
-# jumlah_angka = int(input('Masukkan jumlah angka yang mau diinput: '))
+print(pembatas)
+print("Selamat datang !!")
+print("Hitung total dan Nilai rata-rata")
+print(pembatas)
+while True:
+    inputan_user = (input("Masukkan nilai (atau ketik selesai untuk keluar):  "))
 
-# for i in range(jumlah_angka):
-#     list_angka.append(int(input(f"Masukkan Angka ke-{i+1} : ")))
+    if(inputan_user == "selesai"):
+        break
+    else:
+        inputan_user = int(inputan_user)
+        list_nilai.append(inputan_user)
 
-# # Memanggil fungsi (unpack 2 nilai return)
-# total_nilai, rata_rata_nilai = hitung_total_dan_rata(*list_angka)
+total_nilai, rata_rata_nilai = hitung_total_dan_rata(*list_nilai)
+print(f"Total Nilai     : {total_nilai}")
+print(f"Rata-rata  Nilai: {rata_rata_nilai:.2f}")
 
-# print(f"Total     : {total_nilai}")
-# print(f"Rata-rata : {rata_rata_nilai:.2f}")
 
 
 
@@ -101,4 +109,4 @@ def hitung_selisih_waktu():
     print(f"Output: {jam} jam - {menit} menit - {detik} detik")
 
 # Jalankan fungsi
-hitung_selisih_waktu()
+# hitung_selisih_waktu()
