@@ -25,24 +25,32 @@ def volume_tabung(r, t):
 
 
 # Latihan 1 no 3 Total dan Rata-Rata
-list_angka = []
+
+pembatas = "="*20
+list_nilai = []
 
 def hitung_total_dan_rata(*angka):
     total = sum(angka)
     rata_rata = total / len(angka) if len(angka) > 0 else 0 
     return total, rata_rata
 
-# # Input User
-# jumlah_angka = int(input('Masukkan jumlah angka yang mau diinput: '))
+print(pembatas)
+print("Selamat datang !!")
+print("Hitung total dan Nilai rata-rata")
+print(pembatas)
+while True:
+    inputan_user = (input("Masukkan nilai (atau ketik selesai untuk keluar):  "))
 
-# for i in range(jumlah_angka):
-#     list_angka.append(int(input(f"Masukkan Angka ke-{i+1} : ")))
+    if(inputan_user == "selesai"):
+        break
+    else:
+        inputan_user = int(inputan_user)
+        list_nilai.append(inputan_user)
 
-# # Memanggil fungsi (unpack 2 nilai return)
-# total_nilai, rata_rata_nilai = hitung_total_dan_rata(*list_angka)
+total_nilai, rata_rata_nilai = hitung_total_dan_rata(*list_nilai)
+print(f"Total Nilai     : {total_nilai}")
+print(f"Rata-rata  Nilai: {rata_rata_nilai:.2f}")
 
-# print(f"Total     : {total_nilai}")
-# print(f"Rata-rata : {rata_rata_nilai:.2f}")
 
 
 
@@ -71,23 +79,23 @@ def login():
 # login()
 
 # Latihan 3 selisih waktu
+def hitung_inputan_detik_waktu():
+    jam = int(input("Masukkan Jam: "))
+    menit = int(input("Masukkan Menit: "))
+    detik = int(input("Masukkan Detik: "))
+
+    total = (jam * 3600) + (menit * 60) + detik
+    return  total
 
 def hitung_selisih_waktu():
+
     print("--- Input Waktu Mulai ---")
-    jam_mulai = int(input("Jam   : "))
-    menit_mulai = int(input("Menit : "))
-    detik_mulai = int(input("Detik : "))
+    total_mulai = hitung_inputan_detik_waktu()
 
     print("\n--- Input Waktu Selesai ---")
-    jam_selesai = int(input("Jam   : "))
-    menit_selesai = int(input("Menit : "))
-    detik_selesai = int(input("Detik : "))
+    total_selesai = hitung_inputan_detik_waktu()
 
-    total_detik_mulai = (jam_mulai * 3600) + (menit_mulai * 60) + detik_mulai
-    total_detik_selesai = (jam_selesai * 3600) + (menit_selesai * 60) + detik_selesai
-
-
-    selisih_detik = total_detik_selesai - total_detik_mulai
+    selisih_detik = total_selesai - total_mulai
 
     if selisih_detik < 0:
         selisih_detik += 24 * 3600
